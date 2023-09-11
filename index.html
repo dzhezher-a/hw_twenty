@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,26 +7,38 @@
     <title>Homework Twenty</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <header>
       <div class="top-nav">
         <div class="top-nav__brand">
           <a href="#"><img src="img/brand-logo.svg" alt="apple-logo" /></a>
         </div>
-        <div class="top-nav__link">
-          <a class="item-animation-one" href="#">link</a>
+        <div class="top-nav__el">
+          <a class="item-animation-one" href="#">лінк</a>
         </div>
-        <div class="top-nav__link">
-          <a class="item-animation-one" href="#">link</a>
+        <div class="top-nav__el">
+          <a class="item-animation-one" href="#">лінк</a>
         </div>
-        <div class="top-nav__link">
-          <a class="item-animation-one" href="#">link</a>
+        <div class="top-nav__el">
+          <a class="item-animation-one" href="#">лінк</a>
         </div>
-        <div class="top-nav__link">
-          <a class="item-animation-one" href="#">link</a>
+        <div class="top-nav__el">
+          <a class="item-animation-one" href="#">лінк</a>
         </div>
       </div>
     </header>
+
+    <div id="basket-icon">
+      <img src="img/shopping-cart.svg" alt="shopping-cart" />
+    </div>
+
+    <div class="basket-container">
+      <div id="basket">
+        <span id="close-basket"></span>
+        <span id="clear-basket">очистити</span>
+      </div>
+    </div>
 
     <main>
       <section id="shop-content">
@@ -130,7 +142,7 @@
         </div>
 
         <div class="item-description item-description_iphone">
-          <div class="card">
+          <div class="card" data-price="1500">
             <img src="img/iphone-img.webp" alt="iphone-img" />
             <h3 class="item-animation-two">iPhone</h3>
             <p>
@@ -138,12 +150,12 @@
               itaque dignissimos voluptatibus. Ipsa, id possimus.
             </p>
             <h4>$1500</h4>
-            <button class="buy-btn">Buy</button>
+            <button class="buy-btn button-style">Купити</button>
           </div>
         </div>
 
         <div class="item-description item-description_ipad">
-          <div class="card">
+          <div class="card" data-price="1500">
             <img src="img/ipad-img.webp" alt="ipad-img" />
             <h3 class="item-animation-two">iPad</h3>
             <p>
@@ -151,39 +163,117 @@
               itaque dignissimos voluptatibus. Ipsa, id possimus.
             </p>
             <h4>$1500</h4>
-            <button class="buy-btn">Buy</button>
+            <button class="buy-btn button-style">Купити</button>
           </div>
         </div>
 
         <div class="item-description item-description_mac">
-          <div class="card">
+          <div class="card" data-price="2500">
             <img src="img/mac-img.jpeg" alt="mac-img" />
             <h3 class="item-animation-two">Macbook</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
               itaque dignissimos voluptatibus. Ipsa, id possimus.
             </p>
-            <h4>$1500</h4>
-            <button class="buy-btn">Buy</button>
+            <h4>$2500</h4>
+            <button class="buy-btn button-style">Купити</button>
           </div>
         </div>
 
         <div class="item-description item-description_airpods">
-          <div class="card">
+          <div class="card" data-price="300">
             <img src="img/airpods-img.webp" alt="airpods-img" />
             <h3 class="item-animation-two">AirPods</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
               itaque dignissimos voluptatibus. Ipsa, id possimus.
             </p>
-            <h4>$1500?</h4>
-            <button class="buy-btn">Buy</button>
+            <h4>$300</h4>
+            <button class="buy-btn button-style">Купити</button>
           </div>
         </div>
         <div class="item-added">
-          <p>item added to your basket</p>
+          <p>товар додано до кошику</p>
         </div>
       </section>
+
+      <div class="form-wrap">
+        <h3 class="form-title"></h3>
+        <form action="#" id="order-form">
+          <div class="form-row">
+            <div class="form-item">
+              <label for="name">ПІБ</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="ПІБ"
+                class="form-input-required"
+              />
+            </div>
+
+            <div class="form-item">
+              <label for="city">Місто</label>
+              <select name="city" id="city">
+                <option>Одеса</option>
+                <option>Київ</option>
+                <option>Львів</option>
+                <option>Харків</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-item">
+              <label for="post-number">Склад Нової Пошти</label>
+              <input
+                type="text"
+                name="post-number"
+                id="post-number"
+                placeholder="Напр: 20"
+                class="form-input-required"
+              />
+            </div>
+
+            <div class="form-item">
+              <label for="payment-option">Метод оплати</label>
+              <select name="payment-option" id="payment-option">
+                <option>Післяплата</option>
+                <option>Передплата</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-item">
+              <label for="quantity">Кількість товару</label>
+              <input
+                class="quantity"
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max="10"
+                value="1"
+                placeholder="1"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-item">
+              <label for="comments">Коментар</label>
+              <textarea name="comments" id="comments" rows="1"></textarea>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <button type="submit" id="submit-button" class="button-style">
+              Замовити
+            </button>
+          </div>
+        </form>
+      </div>
     </main>
     <script src="script.js"></script>
   </body>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +7,12 @@
 
 html,
 body {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 h4 {
-  color: rgb(87, 81, 81);
+  color: #575151;
   padding-bottom: 2%;
 }
 
@@ -23,6 +24,20 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.button-style {
+  background-color: #575151;
+  color: #f0e9e9;
+  transition: 0.3s ease-in-out;
+  width: 35%;
+  margin-top: 3%;
+  padding: 2% 5%;
+  border-radius: 25px;
+}
+.button-style:hover {
+  background-color: #f0e9e9;
+  color: #575151;
 }
 
 .active {
@@ -39,19 +54,19 @@ button {
 }
 .item-animation-one:hover {
   box-shadow: inset 100px 0 0 0 #f0e9e9;
-  color: rgb(87, 81, 81);
+  color: #575151;
 }
 
 .item-animation-two {
-  color: rgb(87, 81, 81);
+  color: #575151;
   font-size: 1.3rem;
-  box-shadow: inset 0 0 0 0 rgb(87, 81, 81);
+  box-shadow: inset 0 0 0 0 #575151;
   margin: 0 -0.25rem;
   padding: 0 0.25rem;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .item-animation-two:hover {
-  box-shadow: inset 100px 0 0 0 rgb(87, 81, 81);
+  box-shadow: inset 100px 0 0 0 #575151;
   color: #f0e9e9;
 }
 
@@ -69,6 +84,7 @@ button {
 }
 .card img {
   width: 45%;
+  border-radius: 25px;
   padding-bottom: 3%;
   transition: 0.3s ease-in-out;
 }
@@ -77,24 +93,13 @@ button {
 }
 .card p {
   text-align: center;
-  color: rgb(87, 81, 81);
+  color: #575151;
   padding-bottom: 3%;
-}
-.card button {
-  background-color: rgb(87, 81, 81);
-  color: #f0e9e9;
-  transition: 0.3s ease-in-out;
-  width: 25%;
-  padding: 2% 5%;
-  border-radius: 25px;
-}
-.card button:hover {
-  background-color: #f0e9e9;
-  color: rgb(87, 81, 81);
 }
 
 header {
-  background-color: rgb(87, 81, 81);
+  background-color: #575151;
+  height: 13%;
 }
 header .top-nav {
   display: flex;
@@ -103,13 +108,123 @@ header .top-nav {
   align-items: center;
   padding: 2% 4%;
   gap: 35px;
+  width: 100%;
+  height: 100%;
 }
 header .top-nav .top-nav__brand {
   margin-right: auto;
   width: 3%;
 }
 header .top-nav .top-nav__brand a img {
+  width: 75%;
+}
+header .top-nav .top-nav__el {
+  width: 3%;
+  height: 80%;
+  margin: auto 0;
+}
+
+#basket-icon {
+  position: fixed;
+  bottom: 5%;
+  right: 2.5%;
+  background-color: #ffffff;
+  border: solid 2px #575151;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  cursor: pointer;
+}
+#basket-icon img {
   width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.basket-container {
+  position: fixed;
+  display: none;
+  bottom: 12%;
+  right: 6%;
+  border-radius: 25px;
+  width: 40%;
+  height: 65%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.63);
+}
+.basket-container #basket {
+  width: 100%;
+  overflow: auto;
+}
+.basket-container #basket #close-basket {
+  position: relative;
+  top: 1%;
+  left: 92%;
+  cursor: pointer;
+}
+.basket-container #basket #close-basket:after {
+  content: "×";
+  font-size: 2.5rem;
+  color: gray;
+  text-align: center;
+}
+.basket-container #basket #clear-basket {
+  position: relative;
+  top: 89%;
+  left: 80%;
+  color: gray;
+  font-size: 1.1rem;
+  text-decoration: underline;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.basket-container #basket #clear-basket:hover {
+  opacity: 1;
+}
+.basket-container #basket .basket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 284px;
+  padding: 1% 2%;
+  margin: 1% 2%;
+  background-color: #f0e9e9;
+  border-radius: 25px;
+}
+.basket-container #basket .basket-item .basket-item__pic {
+  width: 40%;
+  background-color: white;
+  padding: 1%;
+  border-radius: 25px;
+}
+.basket-container #basket .basket-item .basket-item__pic img {
+  width: 100%;
+  border-radius: 25px;
+  transition: 0.3s ease-in-out;
+}
+.basket-container #basket .basket-item .basket-item__pic img:hover {
+  transform: scale(1.1);
+}
+.basket-container #basket .basket-item .basket-item__info {
+  width: 50%;
+}
+.basket-container #basket .basket-item .basket-item__info p {
+  color: #575151;
+  font-size: 1.1rem;
+}
+.basket-container #basket .basket-item .basket-item__delete {
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.basket-container #basket .basket-item .basket-item__delete img {
+  width: 100%;
+  height: 100%;
 }
 
 main {
@@ -134,7 +249,7 @@ main #shop-content .item-list {
   flex-wrap: wrap;
   width: 60%;
   gap: 30px;
-  background-color: rgb(87, 81, 81);
+  background-color: #575151;
   border-radius: 25px;
 }
 main #shop-content .item-list_iphone {
@@ -154,8 +269,8 @@ main #shop-content .item-description {
 }
 main #shop-content .item-description .card {
   width: 85%;
-  margin: 0;
-  padding: 2%;
+  margin: auto 0;
+  padding: 5% 2%;
   cursor: default;
 }
 main #shop-content .item-description_iphone {
@@ -180,7 +295,61 @@ main #shop-content .item-added {
   height: 40px;
   width: 15%;
   color: #f0e9e9;
-  background-color: rgb(87, 81, 81);
+  background-color: #575151;
   border-radius: 25px;
   transition: 0.3s;
+}
+main .form-wrap {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1% 0;
+  background-color: whitesmoke;
+  width: 38%;
+  border-radius: 25px;
+}
+main .form-wrap h3 {
+  color: #575151;
+  padding: 1% 0;
+}
+main .form-wrap #order-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 1% 3%;
+  width: 100%;
+}
+main .form-wrap #order-form .form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  gap: 10px;
+}
+main .form-wrap #order-form .form-row .form-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+main .form-wrap #order-form .form-row .form-item label {
+  color: #575151;
+  padding-bottom: 4px;
+}
+main .form-wrap #order-form .form-row .form-item input,
+main .form-wrap #order-form .form-row .form-item select,
+main .form-wrap #order-form .form-row .form-item textarea {
+  border-radius: 25px;
+  color: #575151;
+  border: solid 2px #575151;
+  padding: 2% 4%;
+  width: 100%;
+}
+main .form-wrap #order-form .form-row .form-item textarea {
+  resize: none;
+}
+main .form-wrap #order-form .form-row .form-item .form-input-required.error {
+  border-color: red;
 }
